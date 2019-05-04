@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/importarGrade"
+            android:icon="@android:drawable/ic_input_get"
+            android:title="Importar Grade"
+            tools:onClick="catalogo" />
+        <item
+            android:id="@+id/importarHistorico"
+            android:icon="@android:drawable/ic_input_get"
+            android:title="Importar Histórico"
+            tools:onClick="passado" />
+        <item
+            android:id="@+id/ajuda"
+            android:icon="@android:drawable/ic_menu_help"
+            android:title="Ajuda"
+            tools:onClick="ajudar" />
+    </group>
+
+    <item android:title="Enviar">
+        <menu>
+            <item
+                android:id="@+id/compartilhar"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Compartilhar"
+                tools:onClick="exportar" />
+        </menu>
+    </item>
+
+</menu>

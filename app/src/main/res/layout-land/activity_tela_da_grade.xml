@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="landscape"
+    tools:context=".TelaDaGrade">
+
+    <TextView
+        android:id="@+id/materias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Matérias atuais:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextureView
+        android:id="@+id/textureView"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materias" />
+
+    <TextView
+        android:id="@+id/materiaFazendo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/textureView"
+        app:layout_constraintEnd_toEndOf="@+id/textureView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textureView"
+        app:layout_constraintTop_toTopOf="@+id/textureView" />
+
+    <TextView
+        android:id="@+id/materiaFazendo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/textureView"
+        app:layout_constraintEnd_toEndOf="@+id/textureView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/materiaFazendo1"
+        app:layout_constraintTop_toTopOf="@+id/textureView" />
+
+    <TextView
+        android:id="@+id/materiaFazendo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/textureView"
+        app:layout_constraintEnd_toEndOf="@+id/textureView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/materiaFazendo2"
+        app:layout_constraintTop_toTopOf="@+id/textureView" />
+
+    <TextView
+        android:id="@+id/materiaFazendo4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/textureView"
+        app:layout_constraintEnd_toEndOf="@+id/textureView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/materiaFazendo3"
+        app:layout_constraintTop_toTopOf="@+id/textureView" />
+
+    <TextView
+        android:id="@+id/materiaFazendo5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/textureView"
+        app:layout_constraintEnd_toEndOf="@+id/textureView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/materiaFazendo4"
+        app:layout_constraintTop_toTopOf="@+id/textureView" />
+
+    <TextView
+        android:id="@+id/materiaFazendo6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/textureView"
+        app:layout_constraintEnd_toEndOf="@+id/textureView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/materiaFazendo5"
+        app:layout_constraintTop_toTopOf="@+id/textureView" />
+
+    <TextView
+        android:id="@+id/materiaFazendo7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/textureView"
+        app:layout_constraintEnd_toEndOf="@+id/textureView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/materiaFazendo6"
+        app:layout_constraintTop_toTopOf="@+id/textureView" />
+
+    <TextView
+        android:id="@+id/materiaFazendo8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/textureView"
+        app:layout_constraintEnd_toEndOf="@+id/textureView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/materiaFazendo7"
+        app:layout_constraintTop_toTopOf="@+id/textureView" />
+
+    <Button
+        android:id="@+id/buttonM1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="9dp"
+        android:backgroundTintMode="src_over"
+        android:text=">"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/materiaFazendo1"
+        app:layout_constraintStart_toStartOf="@+id/materiaFazendo1"
+        app:layout_constraintTop_toBottomOf="@+id/textureView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonM2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="9dp"
+        android:backgroundTintMode="src_over"
+        android:text=">"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/materiaFazendo2"
+        app:layout_constraintStart_toStartOf="@+id/materiaFazendo2"
+        app:layout_constraintTop_toBottomOf="@+id/textureView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonM3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="9dp"
+        android:backgroundTintMode="src_over"
+        android:text=">"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/materiaFazendo3"
+        app:layout_constraintStart_toStartOf="@+id/materiaFazendo3"
+        app:layout_constraintTop_toBottomOf="@+id/textureView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonM4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="9dp"
+        android:backgroundTintMode="src_over"
+        android:text=">"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/materiaFazendo4"
+        app:layout_constraintStart_toStartOf="@+id/materiaFazendo4"
+        app:layout_constraintTop_toBottomOf="@+id/textureView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonM5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="9dp"
+        android:backgroundTintMode="src_over"
+        android:text=">"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/materiaFazendo5"
+        app:layout_constraintStart_toStartOf="@+id/materiaFazendo5"
+        app:layout_constraintTop_toBottomOf="@+id/textureView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonM6"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="9dp"
+        android:backgroundTintMode="src_over"
+        android:text=">"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/materiaFazendo6"
+        app:layout_constraintStart_toStartOf="@+id/materiaFazendo6"
+        app:layout_constraintTop_toBottomOf="@+id/textureView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonM7"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="9dp"
+        android:backgroundTintMode="src_over"
+        android:text=">"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/materiaFazendo7"
+        app:layout_constraintStart_toStartOf="@+id/materiaFazendo7"
+        app:layout_constraintTop_toBottomOf="@+id/textureView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonM8"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="9dp"
+        android:backgroundTintMode="src_over"
+        android:text=">"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/materiaFazendo8"
+        app:layout_constraintStart_toStartOf="@+id/materiaFazendo8"
+        app:layout_constraintTop_toBottomOf="@+id/textureView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB1JaPassei"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonM1"
+        app:layout_constraintStart_toStartOf="@+id/buttonM1"
+        app:layout_constraintTop_toBottomOf="@+id/buttonM1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB1VouPassar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/materiaProximoPeriodo2"
+        app:layout_constraintEnd_toEndOf="@+id/buttonM1"
+        app:layout_constraintStart_toStartOf="@+id/buttonM1"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxB1JaPassei"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB1NaoPasso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonM1"
+        app:layout_constraintStart_toStartOf="@+id/buttonM1"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxB1VouPassar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB2JaPassei"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonM2"
+        app:layout_constraintStart_toStartOf="@+id/buttonM2"
+        app:layout_constraintTop_toBottomOf="@+id/buttonM2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB2VouPassar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxB2JaPassei"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxB2JaPassei"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxB2JaPassei"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB2NaoPasso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxB2VouPassar"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxB2VouPassar"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxB2VouPassar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB3JaPassei"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonM3"
+        app:layout_constraintStart_toStartOf="@+id/buttonM3"
+        app:layout_constraintTop_toBottomOf="@+id/buttonM3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB3VouPassar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxB3JaPassei"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxB3JaPassei"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxB3JaPassei"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB3NaoPasso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxB3VouPassar"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxB3VouPassar"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxB3VouPassar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB4JaPassei"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonM4"
+        app:layout_constraintStart_toStartOf="@+id/buttonM4"
+        app:layout_constraintTop_toBottomOf="@+id/buttonM4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB4VouPassar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxB4JaPassei"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxB4JaPassei"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxB4JaPassei"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB4NaoPasso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxB4VouPassar"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxB4VouPassar"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxB4VouPassar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB5JaPassei"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonM5"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="@+id/buttonM5"
+        app:layout_constraintTop_toBottomOf="@+id/buttonM5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB5VouPassar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxB5JaPassei"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxB5JaPassei"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxB5JaPassei"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB5NaoPasso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxB5VouPassar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxB5VouPassar"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxB5VouPassar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB6JaPassei"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonM6"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/buttonM6"
+        app:layout_constraintTop_toBottomOf="@+id/buttonM6"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB6VouPassar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxB6JaPassei"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxB6JaPassei"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxB6JaPassei"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB6NaoPasso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxB6VouPassar"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxB6VouPassar"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxB6VouPassar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB7JaPassei"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonM7"
+        app:layout_constraintStart_toStartOf="@+id/buttonM7"
+        app:layout_constraintTop_toBottomOf="@+id/buttonM7"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB7VouPassar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxB7JaPassei"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxB7JaPassei"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxB7JaPassei"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB7NaoPasso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxB7VouPassar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxB7VouPassar"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxB7VouPassar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB8JaPassei"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonM8"
+        app:layout_constraintStart_toStartOf="@+id/buttonM8"
+        app:layout_constraintTop_toBottomOf="@+id/buttonM8"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB8VouPassar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxB8JaPassei"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxB8JaPassei"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxB8JaPassei"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBoxB8NaoPasso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="CheckBox"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxB8VouPassar"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxB8VouPassar"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxB8VouPassar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextureView
+        android:id="@+id/materiasFinais"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materiasProximoPeriodo"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/materiasProximoPeriodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="30dp"
+        android:text="Matéria para os próximos periodos:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/materiaProximoPeriodo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/materiasFinais"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/materiasFinais"
+        app:layout_constraintVertical_bias="0.51" />
+
+    <TextView
+        android:id="@+id/materiaProximoPeriodo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/materiasFinais"
+        app:layout_constraintEnd_toEndOf="@+id/materiasFinais"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/materiaProximoPeriodo1"
+        app:layout_constraintTop_toTopOf="@+id/materiasFinais" />
+
+    <TextView
+        android:id="@+id/materiaProximoPeriodo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/materiasFinais"
+        app:layout_constraintEnd_toEndOf="@+id/materiasFinais"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/materiaProximoPeriodo2"
+        app:layout_constraintTop_toTopOf="@+id/materiasFinais" />
+
+    <TextView
+        android:id="@+id/materiaProximoPeriodo4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/materiasFinais"
+        app:layout_constraintEnd_toEndOf="@+id/materiasFinais"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/materiaProximoPeriodo3"
+        app:layout_constraintTop_toTopOf="@+id/materiasFinais" />
+
+    <TextView
+        android:id="@+id/materiaProximoPeriodo5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/materiasFinais"
+        app:layout_constraintEnd_toEndOf="@+id/materiasFinais"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/materiaProximoPeriodo4"
+        app:layout_constraintTop_toTopOf="@+id/materiasFinais" />
+
+    <TextView
+        android:id="@+id/materiaProximoPeriodo6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/materiasFinais"
+        app:layout_constraintEnd_toEndOf="@+id/materiasFinais"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/materiaProximoPeriodo5"
+        app:layout_constraintTop_toTopOf="@+id/materiasFinais" />
+
+    <TextView
+        android:id="@+id/materiaProximoPeriodo7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/materiasFinais"
+        app:layout_constraintEnd_toEndOf="@+id/materiasFinais"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/materiaProximoPeriodo6"
+        app:layout_constraintTop_toTopOf="@+id/materiasFinais" />
+
+    <TextView
+        android:id="@+id/materiaProximoPeriodo8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/materiasFinais"
+        app:layout_constraintEnd_toEndOf="@+id/materiasFinais"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/materiaProximoPeriodo7"
+        app:layout_constraintTop_toTopOf="@+id/materiasFinais" />
+
+</android.support.constraint.ConstraintLayout>
