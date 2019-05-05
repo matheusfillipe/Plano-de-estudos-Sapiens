@@ -103,6 +103,14 @@ public class TelaInicial extends AppCompatActivity {
             }
         });
 
+        checkPerms();
+
+        db = AppDatabase.getInstance(this).alunoDAO();
+        dbHandler = new DbHandler(db);
+    }
+
+    public void updateView(){
+
         TextView txtHoras = (TextView) findViewById(R.id.textoHoras);
 
         HorizontalScrollView fundoTexto_ = (HorizontalScrollView) findViewById(R.id.horizontalScrollView);
@@ -212,10 +220,6 @@ public class TelaInicial extends AppCompatActivity {
 
         txtHoras.setText("Você acumulou " + Historico.horas + " horas ");
 
-        checkPerms();
-
-        db = AppDatabase.getInstance(this).alunoDAO();
-        dbHandler = new DbHandler(db);
     }
 
     public void passado(){

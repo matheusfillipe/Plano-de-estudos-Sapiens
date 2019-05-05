@@ -5,15 +5,15 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/importarGrade"
-            android:icon="@android:drawable/ic_input_get"
-            android:title="Importar Grade"
-            tools:onClick="catalogo" />
-        <item
             android:id="@+id/importarHistorico"
             android:icon="@android:drawable/ic_input_get"
             android:title="Importar Histórico"
             tools:onClick="passado" />
+        <item
+            android:id="@+id/importarGrade"
+            android:icon="@android:drawable/ic_input_get"
+            android:title="Importar Grade"
+            tools:onClick="catalogo" />
         <item
             android:id="@+id/ajuda"
             android:icon="@android:drawable/ic_menu_help"
