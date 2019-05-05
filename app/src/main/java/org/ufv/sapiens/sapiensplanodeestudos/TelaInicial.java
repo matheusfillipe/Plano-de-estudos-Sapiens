@@ -256,6 +256,8 @@ public class TelaInicial extends AppCompatActivity {
         disciplinas.add("Novo: " + p.toString());
         listAdapter.notifyDataSetChanged();
 
+        updateView(); //Coloquei um aqui ///////////////////////////////////////////
+
         Intent intent = new Intent(TelaInicial.this, TelaDaGrade.class);
         startActivity(intent);
         finish();
@@ -311,9 +313,8 @@ public class TelaInicial extends AppCompatActivity {
         }
         if(nome.length()==0)
             return;
-
-
         listAdapter.notifyDataSetChanged();
+        updateView();//Coloquei um aqui ///////////////////////////////////////////
         }
 
 
@@ -322,6 +323,7 @@ public class TelaInicial extends AppCompatActivity {
         super.onActivityReenter(resultCode, data);
         disciplinas.clear();
         listAdapter.notifyDataSetChanged();
+        updateView(); //Coloquei um aqui ///////////////////////////////////////////
     }
 
     private boolean checkPerms() {
