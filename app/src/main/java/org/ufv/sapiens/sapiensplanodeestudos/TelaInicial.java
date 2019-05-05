@@ -45,7 +45,6 @@ import static org.ufv.sapiens.sapiensplanodeestudos.Constants.CSV;
 
 public class TelaInicial extends AppCompatActivity {
 
-
     private ArrayAdapter<String> listAdapter;
     private ArrayList<String> disciplinas;
     private Historico historico;
@@ -58,8 +57,6 @@ public class TelaInicial extends AppCompatActivity {
 
     private AlertCatalogo fragment;
 
-    public TelaInicial() {
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
