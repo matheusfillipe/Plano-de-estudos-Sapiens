@@ -65,7 +65,7 @@ public class TelaInicial extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-        FloatingActionButton gerador = (FloatingActionButton) findViewById(R.id.gerarGrade);
+        /*FloatingActionButton gerador = (FloatingActionButton) findViewById(R.id.gerarGrade);
 
 
         gerador.setOnClickListener(new View.OnClickListener() {
@@ -74,12 +74,10 @@ public class TelaInicial extends AppCompatActivity {
                 Snackbar.make(view, "Abrir outra tela", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
-                Intent intent = new Intent(TelaInicial.this, TelaDaGrade.class);
-                startActivity(intent);
-                finish();
+                //
 
             }
-        });
+        });*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -95,9 +93,11 @@ public class TelaInicial extends AppCompatActivity {
 
                 if (id == R.id.importarGrade) {
                     passado();
-               } else if (id == R.id.importarHistorico) {
+                } else if (id == R.id.importarHistorico) {
                     catalogo();
-              }
+                }else if (id == R.id.ajuda) {
+                    ajudar();
+                }
 
                 return true;
             }
@@ -238,6 +238,7 @@ public class TelaInicial extends AppCompatActivity {
                 .setAction(Intent.ACTION_GET_CONTENT);
 
         startActivityForResult(Intent.createChooser(intent, "Escolha o arquivo de seu passado curricular"), 1);
+        updateView();
 
     }
 
@@ -263,7 +264,7 @@ public class TelaInicial extends AppCompatActivity {
         finish();
     }
 
-    public void ajudar(View view){
+    public void ajudar(){
         Intent intent = new Intent(TelaInicial.this, Ajuda.class);
         startActivity(intent);
         finish();
@@ -391,6 +392,7 @@ public class TelaInicial extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
+
     }
 
     @Override
@@ -408,14 +410,14 @@ public class TelaInicial extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        /*if (id == R.id.action_settings) {
 
             Intent intent = new Intent(TelaInicial.this, Ajuda.class);
             startActivity(intent);
             finish();
 
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }

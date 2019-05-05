@@ -13,7 +13,7 @@ public class Ajuda extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ajuda);
+         setContentView(R.layout.activity_ajuda);
 
         TextView textoDeAjuda = (TextView) findViewById(R.id.textView);
 

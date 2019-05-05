@@ -17,8 +17,7 @@
         <item
             android:id="@+id/ajuda"
             android:icon="@android:drawable/ic_menu_help"
-            android:title="Ajuda"
-            tools:onClick="ajudar" />
+            android:title="Ajuda" />
     </group>
 
     <item android:title="Enviar">
