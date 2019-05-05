@@ -25,8 +25,7 @@
             <item
                 android:id="@+id/compartilhar"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Compartilhar"
-                tools:onClick="exportar" />
+                android:title="Compartilhar" />
         </menu>
     </item>
 

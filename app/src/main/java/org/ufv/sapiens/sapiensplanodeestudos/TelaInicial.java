@@ -32,6 +32,7 @@ import org.ufv.sapiens.sapiensplanodeestudos.Database.Database.DbHandler;
 import org.ufv.sapiens.sapiensplanodeestudos.Dialogos.AlertCatalogo;
 import org.ufv.sapiens.sapiensplanodeestudos.Leitor.FileManager;
 import org.ufv.sapiens.sapiensplanodeestudos.Leitor.Utils;
+import org.ufv.sapiens.sapiensplanodeestudos.SapienService.LoginActivity;
 import org.ufv.sapiens.sapiensplanodeestudos.Sapiens.Processador.PlanoDeEstudos;
 import org.ufv.sapiens.sapiensplanodeestudos.Sapiens.Tabelas.Catalogo;
 import org.ufv.sapiens.sapiensplanodeestudos.Sapiens.Tabelas.Historico;
@@ -64,20 +65,19 @@ public class TelaInicial extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        updateView(); //Coloquei um aqui ////////////////////////////////////////
 
-        /*FloatingActionButton gerador = (FloatingActionButton) findViewById(R.id.gerarGrade);
+        FloatingActionButton gerador = (FloatingActionButton) findViewById(R.id.gerarGrade);
 
 
         gerador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Abrir outra tela", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
-                //
-
+                exportar();
             }
-        });*/
+        });
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -97,6 +97,10 @@ public class TelaInicial extends AppCompatActivity {
                     catalogo();
                 }else if (id == R.id.ajuda) {
                     ajudar();
+                }else if (id == R.id.compartilhar) {
+                    exportar();
+                }else if (id == R.id.atualizar) {
+                    updateView();
                 }
 
                 return true;
@@ -238,6 +242,7 @@ public class TelaInicial extends AppCompatActivity {
                 .setAction(Intent.ACTION_GET_CONTENT);
 
         startActivityForResult(Intent.createChooser(intent, "Escolha o arquivo de seu passado curricular"), 1);
+
         updateView();
 
     }
@@ -248,26 +253,31 @@ public class TelaInicial extends AppCompatActivity {
                 .setType(CSV)
                 .setAction(Intent.ACTION_GET_CONTENT);
 
-        startActivityForResult(Intent.createChooser(intent, "Escolha seu catálogo curricular"), 2);
+        startActivityForResult(Intent.createChooser(intent, "Escolha sua grade curricular"), 2);
+
+        updateView();
 
     }
 
-    public void exportar(View view){
+    public void exportar(){
+
         Periodo p= planoDeEstudos.proximoPeriodo();
         disciplinas.add("Novo: " + p.toString());
         listAdapter.notifyDataSetChanged();
 
         updateView(); //Coloquei um aqui ///////////////////////////////////////////
 
-        Intent intent = new Intent(TelaInicial.this, TelaDaGrade.class);
+        Intent intent = new Intent(TelaInicial.this, GradeProximoPeriodo.class);
         startActivity(intent);
         finish();
     }
 
     public void ajudar(){
-        Intent intent = new Intent(TelaInicial.this, Ajuda.class);
+        Intent intent = new Intent(this, TelaAjuda.class);
         startActivity(intent);
         finish();
+
+        updateView();
     }
 
     @Override
@@ -324,6 +334,7 @@ public class TelaInicial extends AppCompatActivity {
         super.onActivityReenter(resultCode, data);
         disciplinas.clear();
         listAdapter.notifyDataSetChanged();
+
         updateView(); //Coloquei um aqui ///////////////////////////////////////////
     }
 
@@ -400,6 +411,7 @@ public class TelaInicial extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.tela_inicial, menu);
         return true;
+
     }
 
     @Override
