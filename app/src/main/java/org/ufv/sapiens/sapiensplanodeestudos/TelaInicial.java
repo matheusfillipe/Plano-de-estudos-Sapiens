@@ -1,4 +1,3 @@
-//My test branch!
 package org.ufv.sapiens.sapiensplanodeestudos;
 
 import android.Manifest;
@@ -42,9 +41,7 @@ import java.util.ArrayList;
 
 import static org.ufv.sapiens.sapiensplanodeestudos.Constants.CSV;
 
-//Teste
-//Teste2
-//Test433!
+//Sem teste agora
 public class TelaInicial extends AppCompatActivity {
 
     private ArrayAdapter<String> listAdapter;
