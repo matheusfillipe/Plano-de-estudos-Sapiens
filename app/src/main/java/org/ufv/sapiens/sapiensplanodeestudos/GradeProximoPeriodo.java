@@ -10,19 +10,25 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import org.ufv.sapiens.sapiensplanodeestudos.Sapiens.Processador.PlanoDeEstudos;
+import org.ufv.sapiens.sapiensplanodeestudos.Sapiens.Tabelas.Displina;
 import org.ufv.sapiens.sapiensplanodeestudos.Sapiens.Tabelas.Historico;
+import org.ufv.sapiens.sapiensplanodeestudos.Sapiens.Tabelas.Periodo;
 
 public class GradeProximoPeriodo extends AppCompatActivity {
 
     boolean apertado[] = {false, false, false, false, false, false, false, false};
 
     int checked[] = {1,1,1,1,1,1,1,1};
+    Periodo periodoProximo;
+    Periodo periodoCursando;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grade_proximo_periodo);
+        periodoProximo = (Periodo)  getIntent().getSerializableExtra("proximoPeriodo");
+        periodoCursando = (Periodo)  getIntent().getSerializableExtra("periodoCursando");
 
+        setContentView(R.layout.activity_grade_proximo_periodo);
         TextView texto[] = {
                 findViewById(R.id.materiaFazendo1),
                 findViewById(R.id.materiaFazendo2),
@@ -65,15 +71,20 @@ public class GradeProximoPeriodo extends AppCompatActivity {
 
         mAtuais.setText("Matérias atuais:");
 
-        for (int i = 0; i < 8; i++) {
+        int i=0;
+        for (Displina d: periodoCursando.displinas) {
 
-            texto[i].setBackgroundColor(Color.rgb(220,220,220));
-            texto[i].setText(" " + Historico.materiasFazendo[i] + " ");
+            texto[i].setBackgroundColor(Color.rgb(220, 220, 220));
+            texto[i].setText(" " + d.nome + " ");
 
             opcoes[i].setBackgroundColor(Color.TRANSPARENT);
-
+            i++;
+        }
+        i=0;
+        for (Displina d: periodoProximo.displinas) {
             textoFim[i].setBackgroundColor(Color.rgb(220,220,220));
-            textoFim[i].setText(" " + PlanoDeEstudos.materiaProximoPeriodo[i] + " ");
+            textoFim[i].setText(" " + d.nome + " ");
+            i++;
 
         }
 

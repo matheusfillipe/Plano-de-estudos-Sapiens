@@ -8,31 +8,6 @@ import java.util.ListIterator;
 public class Historico {
 
     public static int horas;
-    public static String materias_[][] = {
-            {"","","","","","","","","",""},
-            {"","","","","","","","","",""},
-            {"","","","","","","","","",""},
-            {"","","","","","","","","",""},
-            {"","","","","","","","","",""},
-            {"","","","","","","","","",""},
-            {"","","","","","","","","",""},
-            {"","","","","","","","","",""},
-            {"","","","","","","","","",""},
-            {"","","","","","","","","",""}};
-
-    public static int estadoMaterias[][] = {
-            {0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0}};
-
-    public static String materiasFazendo[] = {"","","","","","","",""};
 
     public ArrayList<Periodo> periodos;
 
@@ -192,19 +167,13 @@ public class Historico {
     public String toString() {
         String string ="";
         int i =0;
-        int j =0;
-        int k =0;
+
+
         for (Periodo p:periodos) {
             string += "Periodo " + i + ":";
             for (Displina d:p.displinas) {
                 string += d.nome + ", " + d.estado + ";  ";
-                materias_[i][j] = d.nome;
-                estadoMaterias[i][j] = d.estado;
-                if(d.estado == 0){
-                    materiasFazendo[k] = d.nome;
-                    k++;
-                }
-                j++;
+
             }
             string+="\n";
             i++;

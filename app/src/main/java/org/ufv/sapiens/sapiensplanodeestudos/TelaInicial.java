@@ -35,17 +35,23 @@ import org.ufv.sapiens.sapiensplanodeestudos.Leitor.Utils;
 import org.ufv.sapiens.sapiensplanodeestudos.SapienService.LoginActivity;
 import org.ufv.sapiens.sapiensplanodeestudos.Sapiens.Processador.PlanoDeEstudos;
 import org.ufv.sapiens.sapiensplanodeestudos.Sapiens.Tabelas.Catalogo;
+import org.ufv.sapiens.sapiensplanodeestudos.Sapiens.Tabelas.Displina;
 import org.ufv.sapiens.sapiensplanodeestudos.Sapiens.Tabelas.Historico;
 import org.ufv.sapiens.sapiensplanodeestudos.Sapiens.Tabelas.Periodo;
 
+import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 import static org.ufv.sapiens.sapiensplanodeestudos.Constants.CSV;
 
-//Sem teste agora
+
 public class TelaInicial extends AppCompatActivity {
 
-    private ArrayAdapter<String> listAdapter;
+
     private ArrayList<String> disciplinas;
     private Historico historico;
     private Catalogo catalogo = null;
@@ -53,6 +59,7 @@ public class TelaInicial extends AppCompatActivity {
     private PlanoDeEstudos planoDeEstudos;
     private DbHandler dbHandler;
     private AlunoDAO db;
+    private List<List<TextView>> texto;
 
 
     private AlertCatalogo fragment;
@@ -64,11 +71,9 @@ public class TelaInicial extends AppCompatActivity {
         setContentView(R.layout.activity_tela_inicial);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        updateView(); //Coloquei um aqui ////////////////////////////////////////
+        disciplinas= new ArrayList<>();
 
         FloatingActionButton gerador = (FloatingActionButton) findViewById(R.id.gerarGrade);
-
 
         gerador.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,9 +97,9 @@ public class TelaInicial extends AppCompatActivity {
                 int id = menuItem.getItemId();
 
                 if (id == R.id.importarGrade) {
-                    passado();
-                } else if (id == R.id.importarHistorico) {
                     catalogo();
+                }else if (id == R.id.importarHistorico) {
+                    passado();
                 }else if (id == R.id.ajuda) {
                     ajudar();
                 }else if (id == R.id.compartilhar) {
@@ -102,15 +107,93 @@ public class TelaInicial extends AppCompatActivity {
                 }else if (id == R.id.atualizar) {
                     updateView();
                 }
-
                 return true;
             }
         });
 
         checkPerms();
 
+        texto = new ArrayList<List<TextView>>();
+        texto.add(Arrays.asList(
+                        (TextView) findViewById(R.id.textView6),
+                        (TextView) findViewById(R.id.textView14),
+                        (TextView) findViewById(R.id.textView22),
+                        (TextView) findViewById(R.id.textView30),
+                        (TextView) findViewById(R.id.textView38),
+                        (TextView) findViewById(R.id.textView46),
+                        (TextView) findViewById(R.id.textView54)));
+
+                        texto.add(Arrays.asList(
+                        (TextView) findViewById(R.id.textView7),
+                        (TextView) findViewById(R.id.textView15),
+                        (TextView) findViewById(R.id.textView23),
+                        (TextView) findViewById(R.id.textView31),
+                        (TextView) findViewById(R.id.textView39),
+                        (TextView) findViewById(R.id.textView47),
+                        (TextView) findViewById(R.id.textView55)));
+
+        texto.add(Arrays.asList(
+                        (TextView) findViewById(R.id.textView8),
+                        (TextView) findViewById(R.id.textView16),
+                        (TextView) findViewById(R.id.textView24),
+                        (TextView) findViewById(R.id.textView32),
+                        (TextView) findViewById(R.id.textView40),
+                        (TextView) findViewById(R.id.textView48),
+                        (TextView) findViewById(R.id.textView56)));
+
+                texto.add(Arrays.asList(
+                        (TextView) findViewById(R.id.textView9),
+                        (TextView) findViewById(R.id.textView17),
+                        (TextView) findViewById(R.id.textView25),
+                        (TextView) findViewById(R.id.textView33),
+                        (TextView) findViewById(R.id.textView41),
+                        (TextView) findViewById(R.id.textView49),
+                        (TextView) findViewById(R.id.textView57)));
+
+
+                texto.add(Arrays.asList(
+                        (TextView) findViewById(R.id.textView10),
+                        (TextView) findViewById(R.id.textView18),
+                        (TextView) findViewById(R.id.textView26),
+                        (TextView) findViewById(R.id.textView34),
+                        (TextView) findViewById(R.id.textView42),
+                        (TextView) findViewById(R.id.textView50),
+                        (TextView) findViewById(R.id.textView58)));
+
+
+                texto.add(Arrays.asList(
+                        (TextView) findViewById(R.id.textView11),
+                        (TextView) findViewById(R.id.textView19),
+                        (TextView) findViewById(R.id.textView27),
+                        (TextView) findViewById(R.id.textView35),
+                        (TextView) findViewById(R.id.textView43),
+                        (TextView) findViewById(R.id.textView51),
+                        (TextView) findViewById(R.id.textView59)));
+
+
+                texto.add(Arrays.asList(
+                        (TextView) findViewById(R.id.textView12),
+                        (TextView) findViewById(R.id.textView20),
+                        (TextView) findViewById(R.id.textView28),
+                        (TextView) findViewById(R.id.textView36),
+                        (TextView) findViewById(R.id.textView44),
+                        (TextView) findViewById(R.id.textView52),
+                        (TextView) findViewById(R.id.textView60)));
+
+
+                texto.add(Arrays.asList(
+                        (TextView) findViewById(R.id.textView13),
+                        (TextView) findViewById(R.id.textView21),
+                        (TextView) findViewById(R.id.textView29),
+                        (TextView) findViewById(R.id.textView37),
+                        (TextView) findViewById(R.id.textView45),
+                        (TextView) findViewById(R.id.textView53),
+                        (TextView) findViewById(R.id.textView61)));
+
+
         db = AppDatabase.getInstance(this).alunoDAO();
         dbHandler = new DbHandler(db);
+
     }
 
     public void updateView(){
@@ -119,115 +202,33 @@ public class TelaInicial extends AppCompatActivity {
 
         HorizontalScrollView fundoTexto_ = (HorizontalScrollView) findViewById(R.id.horizontalScrollView);
 
-        TextView texto[][] = {
+        int i=0;
+        for (Periodo p: historico.periodos) {
 
-                {
-                        (TextView) findViewById(R.id.textView6),
-                        (TextView) findViewById(R.id.textView14),
-                        (TextView) findViewById(R.id.textView22),
-                        (TextView) findViewById(R.id.textView30),
-                        (TextView) findViewById(R.id.textView38),
-                        (TextView) findViewById(R.id.textView46),
-                        (TextView) findViewById(R.id.textView54)
-                },
+            int j=0;
+            for (Displina d: p.displinas) {
 
-                {
-                        (TextView) findViewById(R.id.textView7),
-                        (TextView) findViewById(R.id.textView15),
-                        (TextView) findViewById(R.id.textView23),
-                        (TextView) findViewById(R.id.textView31),
-                        (TextView) findViewById(R.id.textView39),
-                        (TextView) findViewById(R.id.textView47),
-                        (TextView) findViewById(R.id.textView55),
-                },
+                texto.get(i).get(j).setTextColor(Color.BLACK);
+                texto.get(i).get(j).setText(" " + d.nome + " ");
+                texto.get(i).get(j).setTextSize(18);
 
-                {
-                        (TextView) findViewById(R.id.textView8),
-                        (TextView) findViewById(R.id.textView16),
-                        (TextView) findViewById(R.id.textView24),
-                        (TextView) findViewById(R.id.textView32),
-                        (TextView) findViewById(R.id.textView40),
-                        (TextView) findViewById(R.id.textView48),
-                        (TextView) findViewById(R.id.textView56),
-                },
+                if (d.reprovada()) texto.get(i).get(j).setBackgroundColor(Color.rgb(255, 0, 0));
 
-                {
-                        (TextView) findViewById(R.id.textView9),
-                        (TextView) findViewById(R.id.textView17),
-                        (TextView) findViewById(R.id.textView25),
-                        (TextView) findViewById(R.id.textView33),
-                        (TextView) findViewById(R.id.textView41),
-                        (TextView) findViewById(R.id.textView49),
-                        (TextView) findViewById(R.id.textView57),
-                },
+                else if (d.cursando()) texto.get(i).get(j).setBackgroundColor(Color.rgb(0, 50, 255));
 
-                {
-                        (TextView) findViewById(R.id.textView10),
-                        (TextView) findViewById(R.id.textView18),
-                        (TextView) findViewById(R.id.textView26),
-                        (TextView) findViewById(R.id.textView34),
-                        (TextView) findViewById(R.id.textView42),
-                        (TextView) findViewById(R.id.textView50),
-                        (TextView) findViewById(R.id.textView58),
-                },
+                else if (d.aprovada()) texto.get(i).get(i).setBackgroundColor(Color.rgb(10, 200, 5));
 
-                {
-                        (TextView) findViewById(R.id.textView11),
-                        (TextView) findViewById(R.id.textView19),
-                        (TextView) findViewById(R.id.textView27),
-                        (TextView) findViewById(R.id.textView35),
-                        (TextView) findViewById(R.id.textView43),
-                        (TextView) findViewById(R.id.textView51),
-                        (TextView) findViewById(R.id.textView59),
-                },
+                else if (d.pendente()) texto.get(i).get(j).setBackgroundColor(Color.rgb(200, 200, 200));
 
-                {
-                        (TextView) findViewById(R.id.textView12),
-                        (TextView) findViewById(R.id.textView20),
-                        (TextView) findViewById(R.id.textView28),
-                        (TextView) findViewById(R.id.textView36),
-                        (TextView) findViewById(R.id.textView44),
-                        (TextView) findViewById(R.id.textView52),
-                        (TextView) findViewById(R.id.textView60),
-                },
-
-                {
-                        (TextView) findViewById(R.id.textView13),
-                        (TextView) findViewById(R.id.textView21),
-                        (TextView) findViewById(R.id.textView29),
-                        (TextView) findViewById(R.id.textView37),
-                        (TextView) findViewById(R.id.textView45),
-                        (TextView) findViewById(R.id.textView53),
-                        (TextView) findViewById(R.id.textView61),
-                }
-        };
-
-        for (int i = 0; i < 8; i++) {
-
-            for (int j = 0; j < 7; j++) {
-
-                texto[i][j].setTextColor(Color.BLACK);
-                texto[i][j].setText(" " + Historico.materias_[i][j] + " ");
-                texto[i][j].setTextSize(18);
-
-                if (Historico.estadoMaterias[i][j] == -1) texto[i][j].setBackgroundColor(Color.rgb(255, 0, 0));
-
-                else if (Historico.estadoMaterias[i][j] == 0) texto[i][j].setBackgroundColor(Color.rgb(0, 50, 255));
-
-                else if (Historico.estadoMaterias[i][j] == 1) texto[i][j].setBackgroundColor(Color.rgb(10, 200, 5));
-
-                else if (Historico.estadoMaterias[i][j] == 2) texto[i][j].setBackgroundColor(Color.rgb(200, 200, 200));
-
+                j++;
             }
-
+            i++;
         }
-
-        txtHoras.setText("Você acumulou " + Historico.horas + " horas ");
-
+        txtHoras.setText("Você acumulou " + historico.horas + " horas ");
     }
 
     public void passado(){
-        View view=getWindow().getCurrentFocus();
+
           if(catalogo == null){
                 fragment = AlertCatalogo.newInstance("","");
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction().setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
@@ -242,20 +243,17 @@ public class TelaInicial extends AppCompatActivity {
                 .setAction(Intent.ACTION_GET_CONTENT);
 
         startActivityForResult(Intent.createChooser(intent, "Escolha o arquivo de seu passado curricular"), 1);
-
-        updateView();
-
     }
 
     public void catalogo(){
-        View view=getWindow().getCurrentFocus();
+
         Intent intent = new Intent()
                 .setType(CSV)
                 .setAction(Intent.ACTION_GET_CONTENT);
 
         startActivityForResult(Intent.createChooser(intent, "Escolha sua grade curricular"), 2);
 
-        updateView();
+
 
     }
 
@@ -263,11 +261,10 @@ public class TelaInicial extends AppCompatActivity {
 
         Periodo p= planoDeEstudos.proximoPeriodo();
         disciplinas.add("Novo: " + p.toString());
-        listAdapter.notifyDataSetChanged();
-
-        updateView(); //Coloquei um aqui ///////////////////////////////////////////
 
         Intent intent = new Intent(TelaInicial.this, GradeProximoPeriodo.class);
+        intent.putExtra("periodoCursando", historico.getPeriodo(historico.getCurrentPeriodoIndex()));
+        intent.putExtra("proximoPeriodo", p);
         startActivity(intent);
         finish();
     }
@@ -297,7 +294,7 @@ public class TelaInicial extends AppCompatActivity {
                 nome="1";
                 planoDeEstudos= new PlanoDeEstudos(historico, catalogo);
                 dbHandler.insert("test", "1", historico, catalogo);
-
+                updateView();
 
             }catch (NullPointerException e){
                 e.printStackTrace();
@@ -320,12 +317,12 @@ public class TelaInicial extends AppCompatActivity {
                 e.printStackTrace();
                 nome="";
             }
-
         }
+
         if(nome.length()==0)
             return;
-        listAdapter.notifyDataSetChanged();
-        updateView();//Coloquei um aqui ///////////////////////////////////////////
+
+
         }
 
 
@@ -333,9 +330,9 @@ public class TelaInicial extends AppCompatActivity {
     public void onActivityReenter(int resultCode, Intent data) {
         super.onActivityReenter(resultCode, data);
         disciplinas.clear();
-        listAdapter.notifyDataSetChanged();
 
-        updateView(); //Coloquei um aqui ///////////////////////////////////////////
+
+        updateView();
     }
 
     private boolean checkPerms() {

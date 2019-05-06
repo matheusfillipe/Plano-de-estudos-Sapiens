@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class PlanoDeEstudos {
 
-    public static String materiaProximoPeriodo[] = {"","","","","","","",""};
+
 
     private final Historico historico;
     private Historico historicoProposto;
@@ -57,7 +57,6 @@ public class PlanoDeEstudos {
                 if(catalogo.podeCursar(d,historicoProposto)){
                     d.estado=Constants.CURSANDO;
                     displinas.add(d);
-                    materiaProximoPeriodo[i] = d.toString();
                     proximoPeriodo=new Periodo(displinas);
                     i++;
                 }

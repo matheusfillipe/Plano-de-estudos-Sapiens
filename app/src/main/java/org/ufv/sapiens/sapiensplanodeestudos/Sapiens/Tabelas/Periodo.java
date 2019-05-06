@@ -3,8 +3,10 @@ package org.ufv.sapiens.sapiensplanodeestudos.Sapiens.Tabelas;
 import org.ufv.sapiens.sapiensplanodeestudos.Constants;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Periodo {
+@SuppressWarnings("serial")
+public class Periodo implements Serializable {
 
     public ArrayList<Displina> displinas;
 
