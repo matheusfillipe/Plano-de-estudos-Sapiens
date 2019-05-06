@@ -1,6 +1,8 @@
 package org.ufv.sapiens.sapiensplanodeestudos;
 
 import android.Manifest;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -24,6 +26,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.HorizontalScrollView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import org.ufv.sapiens.sapiensplanodeestudos.Database.Database.AppDatabase;
@@ -60,6 +63,7 @@ public class TelaInicial extends AppCompatActivity {
     private DbHandler dbHandler;
     private AlunoDAO db;
     private List<List<TextView>> texto;
+    private Menu menu;
 
 
     private AlertCatalogo fragment;
@@ -88,6 +92,8 @@ public class TelaInicial extends AppCompatActivity {
         setSupportActionBar(toolbar);
         disciplinas= new ArrayList<>();
 
+
+
         FloatingActionButton gerador = (FloatingActionButton) findViewById(R.id.gerarGrade);
 
         gerador.setOnClickListener(new View.OnClickListener() {
@@ -106,18 +112,16 @@ public class TelaInicial extends AppCompatActivity {
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        MenuItem importarGrade= (MenuItem) findViewById(R.id.importarGrade);
-        final MenuItem importarHistorico= (MenuItem) findViewById(R.id.importarHistorico);
-        importarHistorico.setVisible(false);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 int id = menuItem.getItemId();
+               // MenuItem importarHistorico=(MenuItem)  menu.findItem(R.id.importarHistorico).getActionView();
 
                 if (id == R.id.importarGrade) {
                     catalogo();
-                    importarHistorico.setVisible(true);
+                 //   importarHistorico.setVisible(true);
                 }else if (id == R.id.importarHistorico) {
                     passado();
                 }else if (id == R.id.ajuda) {
@@ -432,8 +436,12 @@ public class TelaInicial extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.tela_inicial, menu);
+       // MenuItem importarHistorico=(MenuItem)  menu.findItem(R.id.importarHistorico).getActionView();
+       // this.menu = menu;  // this will copy menu values to upper defined menu so that we can change icon later akash
+       // if(historico==null)
+       //     importarHistorico.setVisible(false);
         return true;
 
     }
