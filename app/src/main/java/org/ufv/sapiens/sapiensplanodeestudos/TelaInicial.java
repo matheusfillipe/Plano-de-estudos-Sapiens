@@ -64,6 +64,21 @@ public class TelaInicial extends AppCompatActivity {
 
     private AlertCatalogo fragment;
 
+    public void toggleVisibilityTextView(TextView txtView) {
+
+        if (txtView.getVisibility() == View.VISIBLE)
+            txtView.setVisibility(View.INVISIBLE);
+        else
+            txtView.setVisibility(View.VISIBLE);
+    }
+
+    public void hideTextView(TextView textView){
+        textView.setVisibility(View.INVISIBLE);
+    }
+    public void showTextView(TextView textView){
+        textView.setVisibility(View.VISIBLE);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +106,10 @@ public class TelaInicial extends AppCompatActivity {
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        MenuItem importarGrade= (MenuItem) findViewById(R.id.importarGrade);
+        final MenuItem importarHistorico= (MenuItem) findViewById(R.id.importarHistorico);
+        importarHistorico.setVisible(false);
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -98,6 +117,7 @@ public class TelaInicial extends AppCompatActivity {
 
                 if (id == R.id.importarGrade) {
                     catalogo();
+                    importarHistorico.setVisible(true);
                 }else if (id == R.id.importarHistorico) {
                     passado();
                 }else if (id == R.id.ajuda) {
@@ -190,6 +210,11 @@ public class TelaInicial extends AppCompatActivity {
                         (TextView) findViewById(R.id.textView53),
                         (TextView) findViewById(R.id.textView61)));
 
+        for(int i =0 ; i< texto.size(); i++){
+            for(int j=0; j< texto.get(i).size(); j++){
+                hideTextView(texto.get(i).get(j));
+            }
+        }
 
         db = AppDatabase.getInstance(this).alunoDAO();
         dbHandler = new DbHandler(db);
@@ -207,24 +232,26 @@ public class TelaInicial extends AppCompatActivity {
 
             int j=0;
             for (Displina d: p.displinas) {
+                TextView text = texto.get(i).get(j);
 
-                texto.get(i).get(j).setTextColor(Color.BLACK);
-                texto.get(i).get(j).setText(" " + d.nome + " ");
-                texto.get(i).get(j).setTextSize(18);
+                text.setTextColor(Color.BLACK);
+                text.setText(" " + d.nome + " ");
+                text.setTextSize(18);
 
-                if (d.reprovada()) texto.get(i).get(j).setBackgroundColor(Color.rgb(255, 0, 0));
+                if (d.reprovada()) text.setBackgroundColor(Color.rgb(255, 0, 0));
 
-                else if (d.cursando()) texto.get(i).get(j).setBackgroundColor(Color.rgb(0, 50, 255));
+                else if (d.cursando()) text.setBackgroundColor(Color.rgb(0, 50, 255));
 
-                else if (d.aprovada()) texto.get(i).get(i).setBackgroundColor(Color.rgb(10, 200, 5));
+                else if (d.aprovada()) text.setBackgroundColor(Color.rgb(10, 200, 5));
 
-                else if (d.pendente()) texto.get(i).get(j).setBackgroundColor(Color.rgb(200, 200, 200));
-
+                else if (d.pendente()) text.setBackgroundColor(Color.rgb(200, 200, 200));
+                showTextView(text);
                 j++;
             }
             i++;
         }
-        txtHoras.setText("Você acumulou " + historico.horas + " horas ");
+
+        txtHoras.setText("Você acumulou " + historico.getHoras() + " horas ");
     }
 
     public void passado(){

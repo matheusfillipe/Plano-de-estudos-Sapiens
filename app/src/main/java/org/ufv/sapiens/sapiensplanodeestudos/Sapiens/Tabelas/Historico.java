@@ -85,6 +85,11 @@ public class Historico {
         horas=h;
     }
 
+    public int getHoras(){
+        calcularHoras();
+        return horas;
+    }
+
     public boolean cursouDisciplina(Displina displina){
         for(Periodo p: periodos) {
             Displina cursada =p.getDisciplina(displina.nome);

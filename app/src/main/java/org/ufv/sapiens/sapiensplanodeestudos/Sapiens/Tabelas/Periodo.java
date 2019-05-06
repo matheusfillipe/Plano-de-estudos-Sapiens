@@ -22,7 +22,7 @@ public class Periodo implements Serializable {
                 return disc;
             }
         }
-        
+
         return Constants.DISPLINA_INVALIDA;
     }
 

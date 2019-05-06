@@ -74,18 +74,21 @@ public class GradeProximoPeriodo extends AppCompatActivity {
         int i=0;
         for (Displina d: periodoCursando.displinas) {
 
-            texto[i].setBackgroundColor(Color.rgb(220, 220, 220));
-            texto[i].setText(" " + d.nome + " ");
+            if(i<texto.length) {
+                texto[i].setBackgroundColor(Color.rgb(220, 220, 220));
+                texto[i].setText(" " + d.nome + " ");
 
-            opcoes[i].setBackgroundColor(Color.TRANSPARENT);
+                opcoes[i].setBackgroundColor(Color.TRANSPARENT);
+            }
             i++;
         }
         i=0;
         for (Displina d: periodoProximo.displinas) {
-            textoFim[i].setBackgroundColor(Color.rgb(220,220,220));
-            textoFim[i].setText(" " + d.nome + " ");
-            i++;
-
+            if(i<textoFim.length) {
+                textoFim[i].setBackgroundColor(Color.rgb(220, 220, 220));
+                textoFim[i].setText(" " + d.nome + " ");
+                i++;
+            }
         }
 
 

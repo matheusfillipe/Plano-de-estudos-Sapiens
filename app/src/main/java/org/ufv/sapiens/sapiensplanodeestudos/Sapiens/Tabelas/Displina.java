@@ -2,9 +2,11 @@ package org.ufv.sapiens.sapiensplanodeestudos.Sapiens.Tabelas;
 
 import org.ufv.sapiens.sapiensplanodeestudos.Constants;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Displina {
+@SuppressWarnings("serial")
+public class Displina  implements Serializable {
 
     public String nome;
     public int estado;
